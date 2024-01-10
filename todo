@@ -1,0 +1,17 @@
+class forme		x
+struct coordonnee	x
+class rectangle		largeur, hauteur, point ancrage (inférieur gauche), (0,0) 1x1, get, set
+class carre		longueur, point ancrage, 1x1
+class cercle		rayon, point ancrage, centre rayon=1 (0,0)
+	Fichiers cpp et h à eux même
+
+
+class couche		stocke pointeur forme, vecteur pour stocker pointeur de formes, ajout pointeur forme -> return bool success, rm form -> return bool success, get forme dans couche -> if error return null vector default return vector, get aire couche int, translate couche int x int y -> return bool success, reset couche, change state:init active inactive -> return success , print couche
+	init : lors créée et reset aire=0
+	active : changement d'état, couche doit être active pour être modifiée
+	inactive : changement d'état, aucune modifications -> échec si demande
+
+
+class vecteur		stocke pointeur forme, contigues, get capacité int, get taille int, double taille, vider vector, destroy formes lors vidé et destroy, sivide, ajout forme paramètre forme -> return bool success, retrait forme -> if error return pointer null default return forme, get forme -> if error return pointer null default return pointer, getVector(flot) 
+class canevas		tableau couches, couches init sauf 0 active, reset couche -> if !active: state=init, reset canevas -> return bool success, active couche(index) -> return bool success, add forme dans active -> return bool success, rm forme -> return bool success, get aire(couches) int, translate couche(int x, int y) -> return bool success, print(flot) canevas  
+class tests		plans de test, méthodes
