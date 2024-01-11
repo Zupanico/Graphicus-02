@@ -15,15 +15,24 @@
 using namespace std;
 
 class Rectangle: public Forme {
-    public:
+public:
+    // Constructeur
     Rectangle(int l=1, int h=1);
+
+    // Destructeur
     ~Rectangle();
     
+    // Getteurs
+    int getHauteur();
+    int getLargeur();
 
-    protected:
+    // Setteurs
+    void setHauteur(int h);
+    void setLargeur(int l);
+    
+protected:
     int largeur;
     int hauteur;
-
 };
 
 #endif

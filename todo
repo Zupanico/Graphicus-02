@@ -1,7 +1,7 @@
 // class forme		x
 // struct coordonnee	x
-class rectangle		largeur, hauteur, point ancrage (inférieur gauche), (0,0) 1x1, get, set
-class carre		longueur, point ancrage, 1x1
+// class rectangle		largeur, hauteur, point ancrage, (0,0) 1x1, get, set
+class carre			longueur, point ancrage, 1x1
 class cercle		rayon, point ancrage, centre rayon=1 (0,0)
 	Fichiers cpp et h à eux même
 
