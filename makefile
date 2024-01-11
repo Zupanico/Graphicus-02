@@ -25,5 +25,8 @@ couche.o: couche.cpp couche.h forme.h
 forme.o: forme.cpp forme.h
 	g++ -c forme.cpp
 
+cercle.o: cercle.cpp cercle.h forme.h
+	g++ -c cercle.cpp
+
 clean:
 	rm  -f *.o

@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include "coordonnee.h"
+#include "cercle.h"
 
 using namespace std;
 
