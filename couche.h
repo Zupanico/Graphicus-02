@@ -10,12 +10,19 @@
  *    Ce fichier fait partie de la distribution de Graphicus.
 ********/
 
+#include "forme.h"
+#include "canevas.h"
+
 #ifndef COUCHE_H
 #define COUCHE_H
 
 class Couche
 {
-   // Classe a completer
+public:
+   Couche(Forme &f);
+   ~Couche();
+protected:
+
 };
 
 #endif
