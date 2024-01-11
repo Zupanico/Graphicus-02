@@ -28,5 +28,8 @@ forme.o: forme.cpp forme.h
 rectangle.o: rectangle.cpp rectangle.h forme.h
 	g++ -c rectangle.cpp
 
+cercle.o: cercle.cpp cercle.h forme.h
+	g++ -c cercle.cpp
+
 clean:
 	rm  -f *.o

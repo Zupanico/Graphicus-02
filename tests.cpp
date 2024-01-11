@@ -11,7 +11,8 @@
 
 void Tests::tests_unitaires_formes()
 {
-   // Tests sur les formes geometriques
+    Cercle obj(1);
+   obj.afficher(cout);
 }
 
 void Tests::tests_unitaires_vecteur()
