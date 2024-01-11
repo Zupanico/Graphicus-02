@@ -8,10 +8,13 @@
 ********/
 
 #include "tests.h"
+#include "forme.h"
+#include "cercle.h"
+#include "rectangle.h"
 
 void Tests::tests_unitaires_formes()
 {
-    Cercle obj(1);
+   Cercle obj(1);
    obj.afficher(cout);
 }
 

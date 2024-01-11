@@ -7,6 +7,8 @@
 
 #include "rectangle.h"
 
+using namespace std;
+
 Rectangle::Rectangle(int l, int h)
 {
     largeur = l;

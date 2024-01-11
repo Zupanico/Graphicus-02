@@ -8,12 +8,8 @@
 #define CERCLE_H
 
 #include "forme.h"
-#include "coordonnee.h"
-#include <iostream>
 
-class Cercle : public Forme
-{
-
+class Cercle : public Forme {
 public:
     Cercle(int rayon);
     ~Cercle();
@@ -23,6 +19,7 @@ public:
 
 protected:
     int rayon;
+    Coordonnee centre;
 };
 
 #endif
