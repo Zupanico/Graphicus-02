@@ -18,10 +18,10 @@
 
 class Couche
 {
-public:
-   Couche(Forme &f);
-   ~Couche();
-protected:
+// public:
+//    Couche(Forme &f);
+//    ~Couche();
+// protected:
 
 };
 

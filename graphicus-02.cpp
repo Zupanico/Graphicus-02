@@ -14,8 +14,8 @@ using namespace std;
 int main()
 {
    Tests tests;
-   
-   tests.tests_application();
+   tests.tests_unitaires_formes();
+   // tests.tests_application();
    return 0;
 }
 

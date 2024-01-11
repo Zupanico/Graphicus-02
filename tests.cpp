@@ -10,12 +10,22 @@
 #include "tests.h"
 #include "forme.h"
 #include "cercle.h"
-#include "rectangle.h"
+#include "carre.h"
 
 void Tests::tests_unitaires_formes()
 {
+   // Construction
    Cercle obj(1);
    obj.afficher(cout);
+
+   // get
+   // Coordonnee ancrage = obj.getAncrage();
+
+   // set
+
+
+   // translater
+
 }
 
 void Tests::tests_unitaires_vecteur()
