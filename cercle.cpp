@@ -10,9 +10,7 @@ using namespace std;
 
 Cercle::Cercle(int rayon1)
 {
-
     rayon = rayon1;
-
 }
 
 Cercle::~Cercle()

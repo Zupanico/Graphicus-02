@@ -1,9 +1,9 @@
 // class forme		x
 // struct coordonnee	x
 // class rectangle		largeur, hauteur, point ancrage, (0,0) 1x1, get, set
-class carre			longueur, point ancrage, 1x1
-class cercle		rayon, point ancrage, centre rayon=1 (0,0)
-	Fichiers cpp et h à eux même
+// class carre			longueur, point ancrage, 1x1
+// class cercle		rayon, point ancrage, centre rayon=1 (0,0)
+	// Fichiers cpp et h à eux même
 
 
 class couche		stocke pointeur forme, vecteur pour stocker pointeur de formes, ajout pointeur forme -> return bool success, rm form -> return bool success, get forme dans couche -> if error return null vector default return vector, get aire couche int, translate couche int x int y -> return bool success, reset couche, change state:init active inactive -> return success , print couche

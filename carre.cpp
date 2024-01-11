@@ -1,0 +1,32 @@
+/********
+ * Fichier: carre.cpp
+ * Auteurs: Nicolas Garant
+ * Date: 04 janvier 2024 (creation)
+ * Description: Implementation de la classe carre
+ ********/
+#include "carre.h"
+
+Carre::Carre(int c)
+{
+    hauteur = c;
+    largeur = c;
+}
+
+Carre::~Carre()
+{
+}
+
+int Carre::getCote()
+{
+    return cote;
+}
+
+void Carre::setCote(int c)
+{
+    cote = c;
+}
+
+void Carre::afficher(ostream &s)
+{
+    s << "Carre (x=" << ancrage.x << "), y=" << ancrage.y << ", c=" << cote << ", aire=" << aire() << ")" << std::endl;
+}

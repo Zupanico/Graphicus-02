@@ -27,6 +27,11 @@ public:
     // Setteurs
     void setHauteur(int h);
     void setLargeur(int l);
+    void setDimension(int h, int l);
+
+    // Methodes
+    double aire() override;
+    void afficher(ostream &s) override;
     
 protected:
     int largeur;

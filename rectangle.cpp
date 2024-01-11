@@ -38,3 +38,19 @@ void Rectangle::setLargeur(int l)
 {
     largeur = l;
 }
+
+void Rectangle::setDimension(int h, int l)
+{
+    hauteur = h;
+    largeur = l;
+}
+
+double Rectangle::aire()
+{
+    return hauteur*largeur;
+}
+
+void Rectangle::afficher(ostream &s)
+{
+    s << "Rectangle (x=" << ancrage.x << "), y=" << ancrage.y << ", l=" << largeur << ", h=" << hauteur << ", aire=" << aire() << ")" << std::endl;
+}
