@@ -8,8 +8,6 @@
 ********/
 
 #include "tests.h"
-#include "cercle.h"
-#include "carre.h"
 
 void Tests::tests_unitaires_formes()
 {
@@ -40,6 +38,13 @@ void Tests::tests_unitaires_formes()
 void Tests::tests_unitaires_vecteur()
 {
    // Tests sur la classe Vecteur
+   Vecteur<int> v;
+   for (int i = 0; i < 100; i+=2)
+   {
+      v.inserer(i);
+   }
+   v.afficher(cout);
+   
 }
 
 void Tests::tests_unitaires_couche()

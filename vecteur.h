@@ -39,9 +39,11 @@ public:
     // Getteur
     T* getValeur(int i);
     int estVide();
+    int getTaille();
+    int getCapacite();
 
     // Afficher
-    void afficher(ostream &s) override;
+    void afficher(ostream &s);
 
     // Vider
     void vider();

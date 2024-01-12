@@ -13,7 +13,7 @@ graphicus-02: graphicus-02.o tests.o canevas.o couche.o forme.o rectangle.o cerc
 graphicus-02.o: graphicus-02.cpp canevas.h couche.h forme.h
 	g++ -c graphicus-02.cpp
 
-tests.o: tests.cpp tests.h canevas.h couche.h forme.h
+tests.o: tests.cpp tests.h canevas.h couche.h forme.h vecteur.h
 	g++ -c tests.cpp
 
 canevas.o: canevas.cpp canevas.h couche.h forme.h

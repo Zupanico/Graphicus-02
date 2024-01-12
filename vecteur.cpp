@@ -138,6 +138,16 @@ template <typename T> int Vecteur<T>::estVide()
     }
 }
 
+template <typename T> int Vecteur<T>::getTaille()
+{
+    return taille;
+}
+
+template <typename T> int Vecteur<T>::getCapacite()
+{
+    return capacite;
+}
+
 template <typename T> void Vecteur<T>::afficher(ostream &s)
 {
     for (int i = 0; i < taille; i++)

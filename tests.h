@@ -11,7 +11,10 @@
 #define TESTS_H
 
 #include <iostream>
+#include "vecteur.h"
 #include "canevas.h"
+#include "cercle.h"
+#include "carre.h"
 
 using namespace std;
 
