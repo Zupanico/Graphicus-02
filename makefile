@@ -7,8 +7,8 @@
 #	la distribution de Graphicus.
 #
 
-graphicus-02: graphicus-02.o tests.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o
-	g++ -o graphicus-02 graphicus-02.o tests.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o
+graphicus-02: graphicus-02.o tests.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o vecteur.o
+	g++ -o graphicus-02 graphicus-02.o tests.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o vecteur.o
 
 graphicus-02.o: graphicus-02.cpp canevas.h couche.h forme.h
 	g++ -c graphicus-02.cpp
@@ -33,6 +33,9 @@ carre.o: carre.cpp carre.h rectangle.h forme.h
 
 cercle.o: cercle.cpp cercle.h forme.h
 	g++ -c cercle.cpp
+
+vecteur.o: vecteur.cpp vecteur.h
+	g++ -c vecteur.cpp
 
 clean:
 	rm  -f *.o
