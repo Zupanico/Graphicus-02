@@ -25,7 +25,7 @@ public:
     // Constructeur
     Vecteur();
 
-    // Desctructeur
+    // Destructeur
     ~Vecteur();
 
     // Inserer
@@ -33,9 +33,18 @@ public:
     int inserer(T valeur, int index);
     int doubler();
 
-    // retrait
-    void
-    retrait();
+    // Retrait
+    int retrait(int i);
+
+    // Getteur
+    T* getValeur(int i);
+    int estVide();
+
+    // Afficher
+    void afficher(ostream &s) override;
+
+    // Vider
+    void vider();
 };
 
 #endif

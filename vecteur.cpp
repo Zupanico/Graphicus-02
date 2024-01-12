@@ -27,7 +27,7 @@ template <typename T> int Vecteur<T>::inserer(T valeur)
         taille ++;
     }
 
-    catch(T valeur) 
+    catch(...) 
     {
         // retourne un code d'erreur 1
         return 1;
@@ -48,7 +48,7 @@ template <typename T> int Vecteur<T>::inserer(T valeur, int index)
         }
     }
 
-    catch (T valeur)
+    catch (...)
     {
         // retourne un code d'erreur 1
         return 1;
@@ -80,7 +80,7 @@ template <typename T> int Vecteur<T>::doubler()
         tab = temp;
     }
 
-    catch (T valeur)
+    catch (...)
     {
         // retourne un code d'erreur 1
         return 1;
@@ -88,4 +88,70 @@ template <typename T> int Vecteur<T>::doubler()
 
     // Sans erreur, retourne 0
     return 0;
+}
+
+template <typename T> int Vecteur<T>::retrait(int index)
+{
+    try{
+        // copie les éléments
+        for (int i = index; i < taille; i++)
+        {
+            // copie le prochain element pour deplacer le tableau
+            tab[i] = tab[i+1];
+        }
+
+        // reduit la taille
+        taille --;
+    }
+    catch (...)
+    {
+        // retourne un code d'erreur 1
+        return 1;
+    }
+
+    // Sans erreur, retourne 0
+    return 0;
+}
+
+template <typename T> T *Vecteur<T>::getValeur(int i)
+{
+    try
+    {   // retourne la valeur à l'index
+        return tab[i];
+    }
+    catch(...)
+    {   // si erreur, retourne un pointeur nul
+        return nullptr;
+    }
+    
+}
+
+template <typename T> int Vecteur<T>::estVide()
+{
+    if (taille == 0)
+    {   // si la taille est egale a 0 -> il est vide, retourne vrai
+        return 1;
+    }
+    else
+    {   // si le vecteur n'est pas vide, retourne faux
+        return 0;
+    }
+}
+
+template <typename T> void Vecteur<T>::afficher(ostream &s)
+{
+    for (int i = 0; i < taille; i++)
+    {
+        // affiche chaque element du vecteur
+        s << tab[i] << endl;
+    }
+}
+
+template <typename T> void Vecteur<T>::vider()
+{
+    // supprime le tableau
+    delete[] tab;
+    // remets les valeurs par defaut
+    capacite = 1;
+    taille = 1;
 }
