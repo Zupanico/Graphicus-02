@@ -8,13 +8,26 @@
 
 using namespace std;
 
-Cercle::Cercle(int rayon1)
+
+Cercle::Cercle(int r, int x, int y)
 {
-    rayon = rayon1;
+    rayon = r;
+    ancrage.x = x;
+    ancrage.y = y;
 }
 
 Cercle::~Cercle()
 {
+}
+
+int Cercle::getRayon()
+{
+    return rayon;
+}
+
+void Cercle::setRayon(int r)
+{
+    rayon = r;
 }
 
 double Cercle::aire()
@@ -24,5 +37,5 @@ double Cercle::aire()
 
 void Cercle::afficher(ostream &s)
 {
-    s << "Cercle (x=" << ancrage.x << "), y=" << ancrage.y << ", r=" << rayon <<", aire=" << aire() << ")" << std::endl;
+    s << "Cercle (x=" << ancrage.x << ", y=" << ancrage.y << ", r=" << rayon <<", aire=" << aire() << ")" << std::endl;
 }

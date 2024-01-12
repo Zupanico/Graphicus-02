@@ -6,10 +6,13 @@
  ********/
 #include "carre.h"
 
-Carre::Carre(int c)
+Carre::Carre(int c, int x, int y)
 {
     hauteur = c;
     largeur = c;
+    cote    = c;
+    ancrage.x = x;
+    ancrage.y = y;
 }
 
 Carre::~Carre()
@@ -28,5 +31,5 @@ void Carre::setCote(int c)
 
 void Carre::afficher(ostream &s)
 {
-    s << "Carre (x=" << ancrage.x << "), y=" << ancrage.y << ", c=" << cote << ", aire=" << aire() << ")" << std::endl;
+    s << "Carre (x=" << ancrage.x << ", y=" << ancrage.y << ", c=" << cote << ", aire=" << aire() << ")" << std::endl;
 }

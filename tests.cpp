@@ -8,24 +8,33 @@
 ********/
 
 #include "tests.h"
-#include "forme.h"
 #include "cercle.h"
 #include "carre.h"
 
 void Tests::tests_unitaires_formes()
 {
    // Construction
-   Cercle obj(1);
-   obj.afficher(cout);
+   Rectangle   r1(1, 1, 2, 2);  // Rectangle
+   Carre       cr1(1, 2, 2);    // Carre
+   Cercle      c1(1,2,2);       // Cercle
 
    // get
-   // Coordonnee ancrage = obj.getAncrage();
+   // printf("%i,%i \n", r1.getAncrage().x, r1.getAncrage().y);   // affiche les points d'ancrage du rectangle en X,Y
+   // printf("%i,%i \n", cr1.getAncrage().x, cr1.getAncrage().y); // affiche les points d'ancrage du carre en X,Y
+   // printf("%i,%i \n", c1.getAncrage().x, c1.getAncrage().y);   // affiche les points d'ancrage du cercle en X,Y
 
-   // set
-
-
+   // afficher
+   c1.afficher(cout);
+   r1.afficher(cout);
+   cr1.afficher(cout);
+   printf("\n TRANSLATION!! \n");
    // translater
-
+   c1.translater(3,3);
+   r1.translater(3,3);
+   cr1.translater(3,3);
+   c1.afficher(cout);
+   r1.afficher(cout);
+   cr1.afficher(cout);
 }
 
 void Tests::tests_unitaires_vecteur()

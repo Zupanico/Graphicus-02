@@ -11,9 +11,18 @@
 
 class Cercle : public Forme {
 public:
-    Cercle(int rayon);
+    // Constructeur 
+    Cercle(int r=1, int x=0, int y=0);
+    // Destructeur
     ~Cercle();
 
+    // Getteur
+    int getRayon();
+
+    // Setteur
+    void setRayon(int r);
+
+    // Methodes
     double aire()  override;
     void afficher(ostream & s)  override;
 

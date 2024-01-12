@@ -9,10 +9,12 @@
 
 using namespace std;
 
-Rectangle::Rectangle(int l, int h)
+Rectangle::Rectangle(int l, int h, int x, int y)
 {
     largeur = l;
     hauteur = h;
+    ancrage.x = x;
+    ancrage.y = y;
 }
 
 Rectangle::~Rectangle()
@@ -52,5 +54,5 @@ double Rectangle::aire()
 
 void Rectangle::afficher(ostream &s)
 {
-    s << "Rectangle (x=" << ancrage.x << "), y=" << ancrage.y << ", l=" << largeur << ", h=" << hauteur << ", aire=" << aire() << ")" << std::endl;
+    s << "Rectangle (x=" << ancrage.x << ", y=" << ancrage.y << ", l=" << largeur << ", h=" << hauteur << ", aire=" << aire() << ")" << std::endl;
 }

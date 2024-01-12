@@ -15,7 +15,7 @@ using namespace std;
 class Rectangle: public Forme {
 public:
     // Constructeur
-    Rectangle(int l=1, int h=1);
+    Rectangle(int l=1, int h=1, int x=0, int y=0);
 
     // Destructeur
     ~Rectangle();

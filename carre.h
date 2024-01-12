@@ -16,7 +16,7 @@ class Carre : public Rectangle
 {
 public:
     // Constructeur
-    Carre(int c=1);
+    Carre(int c=1, int x=0, int y=0);
 
     // Destructeur
     ~Carre();
