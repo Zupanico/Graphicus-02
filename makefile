@@ -8,13 +8,10 @@
 #
 
 graphicus-02: graphicus-02.o tests.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o vecteur.o
-	g++ -o graphicus-02 graphicus-02.o tests.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o vecteur.o
+	g++ -o graphicus-02 vecteur.o tests.o canevas.o couche.o forme.o rectangle.o cercle.o carre.o  graphicus-02.o
 
-graphicus-02.o: graphicus-02.cpp canevas.h couche.h forme.h
+graphicus-02.o: graphicus-02.cpp tests.h
 	g++ -c graphicus-02.cpp
-
-tests.o: tests.cpp tests.h canevas.h couche.h forme.h vecteur.h
-	g++ -c tests.cpp
 
 canevas.o: canevas.cpp canevas.h couche.h forme.h
 	g++ -c canevas.cpp
@@ -36,6 +33,9 @@ cercle.o: cercle.cpp cercle.h forme.h
 
 vecteur.o: vecteur.cpp vecteur.h
 	g++ -c vecteur.cpp
+
+tests.o: tests.cpp vecteur.h tests.h canevas.h couche.h forme.h 
+	g++ -c tests.cpp	
 
 clean:
 	rm  -f *.o

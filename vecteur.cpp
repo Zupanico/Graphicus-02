@@ -1,33 +1,38 @@
 #include "vecteur.h"
 
-template <typename T> inline Vecteur<T>::Vecteur()
+template <typename T>
+inline Vecteur<T>::Vecteur()
 {
     tab = new T[1];
     capacite = 1;
-    taille=1;
+    taille = 0;
 }
 
-template <typename T> Vecteur<T>::~Vecteur()
+template <typename T>
+Vecteur<T>::~Vecteur()
 {
     delete[] tab;
 }
 
-template <typename T> int Vecteur<T>::inserer(T valeur)
+template <typename T>
+int Vecteur<T>::inserer(T valeur)
 {
-    try {
+    try
+    {
         // regarde si taille == capacite
-        if (taille == capacite){
+        if (taille == capacite)
+        {
             doubler();
         }
-        
-        // insere la valeur 
+
+        // insere la valeur
         tab[taille] = valeur;
-        
+
         // augemente la taille
-        taille ++;
+        taille++;
     }
 
-    catch(...) 
+    catch (...)
     {
         // retourne un code d'erreur 1
         return 1;
@@ -37,13 +42,17 @@ template <typename T> int Vecteur<T>::inserer(T valeur)
     return 0;
 }
 
-template <typename T> int Vecteur<T>::inserer(T valeur, int index)
+template <typename T>
+int Vecteur<T>::inserer(T valeur, int index)
 {
-    try {
-        if (index == capacite) {
+    try
+    {
+        if (index == capacite)
+        {
             inserer(valeur);
         }
-        else {
+        else
+        {
             tab[index] = valeur;
         }
     }
@@ -58,11 +67,13 @@ template <typename T> int Vecteur<T>::inserer(T valeur, int index)
     return 0;
 }
 
-template <typename T> int Vecteur<T>::doubler()
+template <typename T>
+int Vecteur<T>::doubler()
 {
-    try {
+    try
+    {
         // tableau temporaire avec double capacite
-        T* temp = new T[2 * capacite];
+        T *temp = new T[2 * capacite];
 
         // copie des elements dans le nouveau tableau
         for (int i = 0; i < capacite; i++)
@@ -74,7 +85,7 @@ template <typename T> int Vecteur<T>::doubler()
         delete[] tab;
 
         // double la capacite APRES avoir copie les valeurs
-        capacite *=2;
+        capacite *= 2;
 
         // remets les valeurs originales
         tab = temp;
@@ -90,18 +101,25 @@ template <typename T> int Vecteur<T>::doubler()
     return 0;
 }
 
-template <typename T> int Vecteur<T>::retrait(int index)
+template <typename T>
+int Vecteur<T>::retrait(int index)
 {
-    try{
+    int ptrRetrait;
+    try
+    {
+        // conserve le prt qui est retrait
+
+        ptrRetrait = tab[index];
+        
         // copie les éléments
         for (int i = index; i < taille; i++)
         {
             // copie le prochain element pour deplacer le tableau
-            tab[i] = tab[i+1];
+            tab[i] = tab[i + 1];
         }
 
         // reduit la taille
-        taille --;
+        taille--;
     }
     catch (...)
     {
@@ -109,46 +127,51 @@ template <typename T> int Vecteur<T>::retrait(int index)
         return 1;
     }
 
-    // Sans erreur, retourne 0
-    return 0;
+    // Sans erreur, retourne le pointeur
+    return ptrRetrait;
 }
 
-template <typename T> T *Vecteur<T>::getValeur(int i)
+template <typename T>
+T *Vecteur<T>::getValeur(int i)
 {
+    int *val = &tab[i];
     try
-    {   // retourne la valeur à l'index
-        return tab[i];
+    { // retourne la valeur à l'index
+        return val;
     }
-    catch(...)
-    {   // si erreur, retourne un pointeur nul
+    catch (...)
+    { // si erreur, retourne un pointeur nul
         return nullptr;
     }
-    
 }
 
-template <typename T> int Vecteur<T>::estVide()
+template <typename T>
+bool Vecteur<T>::estVide()
 {
     if (taille == 0)
-    {   // si la taille est egale a 0 -> il est vide, retourne vrai
-        return 1;
+    { // si la taille est egale a 0 -> il est vide, retourne vrai
+        return true;
     }
     else
-    {   // si le vecteur n'est pas vide, retourne faux
-        return 0;
+    { // si le vecteur n'est pas vide, retourne faux
+        return false;
     }
 }
 
-template <typename T> int Vecteur<T>::getTaille()
+template <typename T>
+int Vecteur<T>::getTaille()
 {
     return taille;
 }
 
-template <typename T> int Vecteur<T>::getCapacite()
+template <typename T>
+int Vecteur<T>::getCapacite()
 {
     return capacite;
 }
 
-template <typename T> void Vecteur<T>::afficher(ostream &s)
+template <typename T>
+void Vecteur<T>::afficher(ostream &s)
 {
     for (int i = 0; i < taille; i++)
     {
@@ -157,11 +180,12 @@ template <typename T> void Vecteur<T>::afficher(ostream &s)
     }
 }
 
-template <typename T> void Vecteur<T>::vider()
+template <typename T>
+void Vecteur<T>::vider()
 {
     // supprime le tableau
     delete[] tab;
     // remets les valeurs par defaut
     capacite = 1;
-    taille = 1;
+    taille = 0;
 }

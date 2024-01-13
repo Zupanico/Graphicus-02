@@ -38,7 +38,7 @@ public:
 
     // Getteur
     T* getValeur(int i);
-    int estVide();
+    bool estVide();
     int getTaille();
     int getCapacite();
 

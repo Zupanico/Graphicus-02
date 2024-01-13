@@ -8,6 +8,7 @@
 ********/
 
 #include "tests.h"
+//#include "vecteur.cpp"
 
 void Tests::tests_unitaires_formes()
 {
@@ -39,12 +40,20 @@ void Tests::tests_unitaires_vecteur()
 {
    // Tests sur la classe Vecteur
    Vecteur<int> v;
+
+   cout << v.estVide() << endl;
+
    for (int i = 0; i < 100; i+=2)
    {
       v.inserer(i);
    }
+   v.retrait(5);
    v.afficher(cout);
+   cout << "Test getValeur(10)"<< *v.getValeur(10) << endl << "Test getTaille" << v.getTaille() << endl << "Test getCapacite" << v.getCapacite() << endl;
    
+   v.vider();
+
+   cout << v.estVide() << endl;
 }
 
 void Tests::tests_unitaires_couche()
