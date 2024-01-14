@@ -46,8 +46,20 @@ public:
     void viderCouche();
 
 protected:
+<<<<<<< Updated upstream
     char etat = 'A'; //I = Initialisé, A = Active et N = non active
     Vecteur<Forme*> v;
+=======
+<<<<<<< HEAD
+char etat = 'A'; //I = Initialisé, A = Active et N = non active, commence Initilasé
+Vecteur<Forme*> v;
+
+
+=======
+    char etat = 'A'; //I = Initialisé, A = Active et N = non active
+    Vecteur<Forme*> v;
+>>>>>>> 5ae30e09d72f37b82ae1eb3744277ff317df851b
+>>>>>>> Stashed changes
 };
 
 #endif
