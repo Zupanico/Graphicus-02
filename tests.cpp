@@ -49,7 +49,7 @@ void Tests::tests_unitaires_vecteur()
    }
    v.retrait(5);
    v.afficher(cout);
-   cout << "Test getValeur(10)"<< *v.getValeur(10) << endl << "Test getTaille" << v.getTaille() << endl << "Test getCapacite" << v.getCapacite() << endl;
+   cout << "Test getValeur(10)"<< v.getValeur(10) << endl << "Test getTaille" << v.getTaille() << endl << "Test getCapacite" << v.getCapacite() << endl;
    
    v.vider();
 
@@ -58,7 +58,17 @@ void Tests::tests_unitaires_vecteur()
 
 void Tests::tests_unitaires_couche()
 {
-   // Tests sur la classe Couche
+   Couche c;
+   Rectangle* ptr = new Rectangle(2,5);
+   Carre* ptrCarre = new Carre(4);
+   c.ajout(ptr);
+   c.ajout(ptrCarre);
+   c.ChangementEtat('N');
+   //cout << c.aireTotale();
+   c.viderCouche();
+   c.afficher(cout);
+ 
+   //cout << c.getForme(0);
 }
 
 void Tests::tests_unitaires_canevas()

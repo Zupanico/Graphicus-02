@@ -10,18 +10,46 @@
  *    Ce fichier fait partie de la distribution de Graphicus.
 ********/
 
-#include "forme.h"
-#include "canevas.h"
 
 #ifndef COUCHE_H
 #define COUCHE_H
 
+#include "forme.h"
+#include "vecteur.h"
+#include <iostream>
+#include "vecteur.cpp"
+
 class Couche
 {
-// public:
-//    Couche(Forme &f);
-//    ~Couche();
-// protected:
+public:
+    Couche();
+    ~Couche();
+
+    //Manipulation du vecteur
+    bool ajout(Forme* val);
+    Forme* retirer(int index);
+
+    //Receveur d'info
+    Forme* getForme(int index);
+    double aireTotale();
+
+
+    //Manipulation de la couche
+    bool ChangementEtat(char nEtat);
+    bool translater(int deltaX, int deltaY);
+
+    //Affichage
+    void afficher(ostream & s);
+
+    //Vider
+    void viderCouche();
+
+ protected:
+
+protected:
+char etat = 'A'; //I = Initialisé, A = Active et N = non active
+Vecteur<Forme*> v;
+
 
 };
 

@@ -8,6 +8,7 @@
 #ifndef VECTEUR_H
 #define VECTEUR_H
 
+
 #include "iostream"
 
 using namespace std;
@@ -34,10 +35,10 @@ public:
     int doubler();
 
     // Retrait
-    int retrait(int i);
+    T retrait(int i);
 
     // Getteur
-    T* getValeur(int i);
+    T getValeur(int i);
     bool estVide();
     int getTaille();
     int getCapacite();

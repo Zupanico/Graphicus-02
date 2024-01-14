@@ -16,6 +16,7 @@
 #include "cercle.h"
 #include "carre.h"
 #include "vecteur.cpp"
+#include "couche.h"
 
 using namespace std;
 

@@ -1,5 +1,7 @@
-#include "vecteur.h"
 
+#ifndef VECTEUR_CPP
+#define VECTEUR_CPP
+#include "vecteur.h"
 template <typename T>
 inline Vecteur<T>::Vecteur()
 {
@@ -17,6 +19,8 @@ Vecteur<T>::~Vecteur()
 template <typename T>
 int Vecteur<T>::inserer(T valeur)
 {
+ 
+    
     try
     {
         // regarde si taille == capacite
@@ -27,6 +31,7 @@ int Vecteur<T>::inserer(T valeur)
 
         // insere la valeur
         tab[taille] = valeur;
+        
 
         // augemente la taille
         taille++;
@@ -34,10 +39,11 @@ int Vecteur<T>::inserer(T valeur)
 
     catch (...)
     {
+       
         // retourne un code d'erreur 1
         return 1;
     }
-
+    
     // Sans erreur, retourne 0
     return 0;
 }
@@ -45,6 +51,7 @@ int Vecteur<T>::inserer(T valeur)
 template <typename T>
 int Vecteur<T>::inserer(T valeur, int index)
 {
+    
     try
     {
         if (index == capacite)
@@ -102,14 +109,16 @@ int Vecteur<T>::doubler()
 }
 
 template <typename T>
-int Vecteur<T>::retrait(int index)
+T Vecteur<T>::retrait(int index)
 {
-    int ptrRetrait;
+    
+    T ptrRetrait;
     try
     {
         // conserve le prt qui est retrait
 
         ptrRetrait = tab[index];
+        cout << ptrRetrait;
         
         // copie les éléments
         for (int i = index; i < taille; i++)
@@ -124,24 +133,26 @@ int Vecteur<T>::retrait(int index)
     catch (...)
     {
         // retourne un code d'erreur 1
-        return 1;
+        //return 1;
     }
 
     // Sans erreur, retourne le pointeur
+   
     return ptrRetrait;
 }
 
 template <typename T>
-T *Vecteur<T>::getValeur(int i)
-{
-    int *val = &tab[i];
+T Vecteur<T>::getValeur(int i)
+{   
+    
     try
     { // retourne la valeur à l'index
-        return val;
+        return  tab[i];
     }
     catch (...)
     { // si erreur, retourne un pointeur nul
-        return nullptr;
+    
+   
     }
 }
 
@@ -185,7 +196,11 @@ void Vecteur<T>::vider()
 {
     // supprime le tableau
     delete[] tab;
+    // création du taleau vide
+    tab = new T[1];
     // remets les valeurs par defaut
     capacite = 1;
     taille = 0;
 }
+
+#endif
