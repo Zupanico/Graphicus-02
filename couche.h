@@ -32,13 +32,14 @@ public:
     //Receveur d'info
     Forme* getForme(int index);
     double aireTotale();
-
+    string getEtat();
 
     //Manipulation de la couche
-    bool ChangementEtat(char nEtat);
+    //I = Initialisé, A = Active et N = non active, commence Initilasé
+    bool ChangementEtat(char nEtat); 
     bool translater(int deltaX, int deltaY);
 
-    //Affichage
+    //Affichage et pour déverminer au besoin
     void afficher(ostream & s);
 
     //Vider
@@ -47,7 +48,7 @@ public:
  protected:
 
 protected:
-char etat = 'A'; //I = Initialisé, A = Active et N = non active
+char etat = 'A'; //I = Initialisé, A = Active et N = non active, commence Initilasé
 Vecteur<Forme*> v;
 
 

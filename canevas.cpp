@@ -6,7 +6,7 @@
  * Date : ...
  * Description: Implementation des methodes des classes decrites dans
  *    canevas.h. Ce fichier fait partie de la distribution de Graphicus.
-********/
+ ********/
 
 #include "canevas.h"
 
@@ -20,44 +20,90 @@ Canevas::~Canevas()
 
 bool Canevas::reinitialiser()
 {
+   for (int i = 0; i < MAX_COUCHES; i++)
+   {
+      couches[i].viderCouche();
+   }
    return true;
 }
 
 bool Canevas::reinitialiserCouche(int index)
 {
+   if (index > MAX_COUCHES || index < 0)
+   {
+      return false;
+   }
+   couches[index].viderCouche();
+   coucheActive = 0;
    return true;
 }
 
 bool Canevas::activerCouche(int index)
 {
+   if (index > MAX_COUCHES || index < 0)
+   {
+      return false;
+   }
+   desactiverCouche(coucheActive);
+   couches[index].ChangementEtat('A');
+   coucheActive = index;
    return true;
 }
 
 bool Canevas::desactiverCouche(int index)
 {
+   if (index > MAX_COUCHES || index < 0)
+   {
+      return false;
+   }
+   couches[index].ChangementEtat('N');
    return true;
 }
 
 bool Canevas::ajouterForme(Forme *p_forme)
 {
+   if (couches[coucheActive].ajout(p_forme))
+   {
+      return false;
+   }
    return true;
 }
 
 bool Canevas::retirerForme(int index)
 {
+   if (couches[coucheActive].retirer(index) == nullptr)
+   {
+      return false;
+   }
    return true;
 }
 
 double Canevas::aire()
 {
-   return 0.0;
+   double aireTot = 0;
+   for (int i = 0; i < MAX_COUCHES; i++)
+   {
+      aireTot += couches[i].aireTotale();
+   }
+   return aireTot;
 }
 
 bool Canevas::translater(int deltaX, int deltaY)
 {
+   if (couches[coucheActive].translater(deltaX, deltaY))
+   {
+      return false;
+   }
    return true;
 }
 
-void Canevas::afficher(ostream & s)
+void Canevas::afficher(ostream &s)
 {
+   for (int i = 0; i < MAX_COUCHES; i++)
+   {
+      s << "----- Couche "<<i<<" -----"<<endl;
+      s <<   "Etat: "<<couches[i].getEtat()<<endl;
+
+      couches[i].afficher(s);
+   }
 }

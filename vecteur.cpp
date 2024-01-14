@@ -6,7 +6,7 @@ template <typename T>
 inline Vecteur<T>::Vecteur()
 {
     tab = new T[1];
-    capacite = 1;
+    capacite = 2;
     taille = 0;
 }
 

@@ -51,7 +51,7 @@ Forme *Couche::retirer(int index)
 {
     Forme *ptr;
     ptr = v.retrait(index);
-    if (etat != 'A' || v.retrait(index) == nullptr) //Si ptr est null renvoie null ou si couche n'est pas active
+    if (etat != 'A' || v.retrait(index) == nullptr) // Si ptr est null renvoie null ou si couche n'est pas active
     {
         return nullptr;
     }
@@ -62,7 +62,7 @@ Forme *Couche::getForme(int index)
 {
     Forme *ptr;
     ptr = v.getValeur(index);
-    if (ptr == nullptr)  //Si ptr est null renvoie null
+    if (ptr == nullptr) // Si ptr est null renvoie null
     {
         return nullptr;
     }
@@ -73,12 +73,12 @@ double Couche::aireTotale()
 {
     double aireTot = 0;
 
-    if (etat == 'I') //Si la couche est initialisé alors aire = 0
+    if (etat == 'I') // Si la couche est initialisé alors aire = 0
     {
         return 0;
     }
 
-    for (int i = 0; i < v.getTaille(); i++) //Défile tous les éléments du vecteur
+    for (int i = 0; i < v.getTaille(); i++) // Défile tous les éléments du vecteur
     {
         aireTot += v.getValeur(i)->aire();
     }
@@ -86,11 +86,28 @@ double Couche::aireTotale()
     return aireTot;
 }
 
+string Couche::getEtat()
+{
+    if (etat == 'A')
+    {
+        return "active";
+    }
+    else if (etat == 'I')
+    {
+        return "initialisé";
+    }
+    else if (etat == 'N')
+    {
+        return "inactive";
+    }
+    return "erreur";
+}
+
 bool Couche::ChangementEtat(char e)
 {
 
-    if (e != 'N' || e != 'A')  //Vérifie si c'est un état possible
-    { // Seul erreur possible
+    if (e != 'N' || e != 'A') // Vérifie si c'est un état possible
+    {                         // Seul erreur possible
         etat = e;
     }
 
@@ -104,7 +121,7 @@ bool Couche::translater(int deltaX, int deltaY) // TODO catch erreurs
         return false;
     }
 
-    for (int i = 0; i < v.getTaille(); i++) //Défile tous les éléments du vecteur
+    for (int i = 0; i < v.getTaille(); i++) // Défile tous les éléments du vecteur
     {
         v.getValeur(i)->translater(deltaX, deltaY);
     }
@@ -114,7 +131,7 @@ bool Couche::translater(int deltaX, int deltaY) // TODO catch erreurs
 void Couche::afficher(ostream &s)
 {
 
-    for (int i = 0; i < v.getTaille(); i++) //Défile tous les éléments du vecteur
+    for (int i = 0; i < v.getTaille(); i++) // Défile tous les éléments du vecteur
     {
         v.getValeur(i)->afficher(s);
     }

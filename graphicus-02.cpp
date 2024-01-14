@@ -15,8 +15,8 @@ int main()
 {
    Tests tests;
    //tests.tests_unitaires_vecteur();
-   tests.tests_unitaires_couche();
-   // tests.tests_application();
+   //tests.tests_unitaires_couche();
+    tests.tests_application();
    return 0;
 }
 

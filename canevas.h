@@ -14,7 +14,7 @@
 #include "forme.h"
 #include "couche.h"
 
-const int MAX_COUCHES = 5;
+const int MAX_COUCHES = 5-1; //On considère 0
 
 using namespace std;
 
@@ -39,6 +39,7 @@ public:
 
 private:
      Couche couches[MAX_COUCHES];
+     int coucheActive = 0;
 };
 
 #endif
