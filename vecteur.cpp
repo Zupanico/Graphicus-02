@@ -144,15 +144,13 @@ T Vecteur<T>::retrait(int index)
 template <typename T>
 T Vecteur<T>::getValeur(int i)
 {   
-    
     try
     { // retourne la valeur à l'index
-        return  tab[i];
+        return tab[i];
     }
     catch (...)
-    { // si erreur, retourne un pointeur nul
-    
-   
+    {
+        return 0;
     }
 }
 

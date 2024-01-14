@@ -10,23 +10,6 @@
 
 #include "couche.h"
 
-// TODO
-/*class couche
-    stocke pointeur forme
-    vecteur pour stocker pointeur de formes
-    ajout pointeur forme->return bool success
-    rm form-> return bool success
-    get forme dans couche->if error return null vector default return vector
-    get aire couche int, translate couche int x int y->return bool success
-    reset couche, change state : init active inactive->return success
-    print couche init : lors créée et reset aire = 0 active : changement d'état
-    couche doit être active pour être modifiée inactive : changement d'état
-    aucune modifications -> échec si demande
-
-
-
-*/
-
 Couche::Couche()
 {
 }
@@ -97,18 +80,25 @@ bool Couche::ChangementEtat(char e)
     return false;
 }
 
-bool Couche::translater(int deltaX, int deltaY) // TODO catch erreurs
+bool Couche::translater(int deltaX, int deltaY) // TODO catch erreurs // DONE
 {
-    if (etat != 'A')
+    try
     {
+        if (etat != 'A')
+        {
+            return false;
+        }
+
+        for (int i = 0; i < v.getTaille(); i++) //Défile tous les éléments du vecteur
+        {
+            v.getValeur(i)->translater(deltaX, deltaY);
+        }
+        return true;
+    }
+    catch(...)
+    {   // si erreur retourne faux
         return false;
     }
-
-    for (int i = 0; i < v.getTaille(); i++) //Défile tous les éléments du vecteur
-    {
-        v.getValeur(i)->translater(deltaX, deltaY);
-    }
-    return true;
 }
 
 void Couche::afficher(ostream &s)
