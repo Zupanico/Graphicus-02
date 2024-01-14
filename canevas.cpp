@@ -101,9 +101,15 @@ void Canevas::afficher(ostream &s)
 {
    for (int i = 0; i < MAX_COUCHES; i++)
    {
-      s << "----- Couche "<<i<<" -----"<<endl;
-      s <<   "Etat: "<<couches[i].getEtat()<<endl;
-
-      couches[i].afficher(s);
+      s << "----- Couche " << i << " -----" << endl;
+      s << "Etat: " << couches[i].getEtat() << endl; // \u00E9 pour é si la console le permet
+      if (couches[i].getEtat() == "initialise")
+      {
+         s << "Couche: vide"<<endl;
+      }
+      else
+      {
+         couches[i].afficher(s);
+      }
    }
 }

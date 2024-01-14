@@ -14,7 +14,7 @@
 #include "forme.h"
 #include "couche.h"
 
-const int MAX_COUCHES = 5-1; //On considère 0
+const int MAX_COUCHES = 5; 
 
 using namespace std;
 

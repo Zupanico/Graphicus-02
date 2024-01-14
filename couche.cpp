@@ -77,7 +77,7 @@ string Couche::getEtat()
     }
     else if (etat == 'I')
     {
-        return "initialisé";
+        return "initialise";
     }
     else if (etat == 'N')
     {
