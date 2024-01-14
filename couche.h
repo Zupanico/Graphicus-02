@@ -45,13 +45,9 @@ public:
     //Vider
     void viderCouche();
 
- protected:
-
 protected:
-char etat = 'A'; //I = Initialisé, A = Active et N = non active, commence Initilasé
-Vecteur<Forme*> v;
-
-
+    char etat = 'A'; //I = Initialisé, A = Active et N = non active
+    Vecteur<Forme*> v;
 };
 
 #endif
