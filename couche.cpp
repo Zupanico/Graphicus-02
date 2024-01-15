@@ -25,7 +25,7 @@ bool Couche::ajout(Forme *val)
         return false;
     }
 
-    v.inserer(val); // TODO arranger pour que le retour de vecteur soit
+    v.inserer(val);
 
     return true;
 }
@@ -34,7 +34,7 @@ Forme *Couche::retirer(int index)
 {
     Forme *ptr;
     ptr = v.retrait(index);
-    if (etat != 'A' || v.retrait(index) == nullptr) // Si ptr est null renvoie null ou si couche n'est pas active
+    if (etat != 'A' || ptr == nullptr) // Si ptr est null renvoie null ou si couche n'est pas active
     {
         return nullptr;
     }
@@ -106,14 +106,14 @@ bool Couche::translater(int deltaX, int deltaY) // TODO catch erreurs // DONE
             return false;
         }
 
-        for (int i = 0; i < v.getTaille(); i++) //Défile tous les éléments du vecteur
+        for (int i = 0; i < v.getTaille(); i++) // Défile tous les éléments du vecteur
         {
             v.getValeur(i)->translater(deltaX, deltaY);
         }
         return true;
     }
-    catch(...)
-    {   // si erreur retourne faux
+    catch (...)
+    { // si erreur retourne faux
         return false;
     }
 }

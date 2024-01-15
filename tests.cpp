@@ -107,6 +107,7 @@ void Tests::tests_application_cas_01()
    c.ajouterForme(cerclePtr);
    c.ajouterForme(carrePtr);
    c.ajouterForme(rectanglePtr1);
+   c.retirerForme(1);
    c.activerCouche(1);
    Rectangle *rectanglePtr2 = new Rectangle(12,3);
    c.ajouterForme(rectanglePtr2);

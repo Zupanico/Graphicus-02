@@ -118,7 +118,7 @@ T Vecteur<T>::retrait(int index)
         // conserve le prt qui est retrait
 
         ptrRetrait = tab[index];
-        cout << ptrRetrait;
+        
         
         // copie les éléments
         for (int i = index; i < taille; i++)
@@ -194,11 +194,12 @@ void Vecteur<T>::vider()
 {
     // supprime le tableau
     delete[] tab;
-    // création du taleau vide
-    tab = new T[1];
     // remets les valeurs par defaut
-    capacite = 1;
+    capacite = 2;
     taille = 0;
+    // création du taleau vide
+    tab = new T[capacite];
+    
 }
 
 #endif
