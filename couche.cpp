@@ -20,8 +20,13 @@ Couche::~Couche()
 
 bool Couche::ajout(Forme *val)
 {
+    if(val == nullptr){
+      cout<< "Erreur ajout pointeur null : ";
+      return false;
+    }
     if (etat != 'A')
     {
+        cout << "Erreur couche inactive : " << endl;
         return false;
     }
 
@@ -34,8 +39,14 @@ Forme *Couche::retirer(int index)
 {
     Forme *ptr;
     ptr = v.retrait(index);
-    if (etat != 'A' || ptr == nullptr) // Si ptr est null renvoie null ou si couche n'est pas active
+    if (ptr == nullptr) // Si ptr est null renvoie null ou si couche n'est pas active
+    {   
+        cout << "Erreur index invalide : " << endl;
+        return nullptr;
+    }
+    if (etat != 'A')
     {
+        cout << "Erreur couche inactive : " << endl;
         return nullptr;
     }
     return ptr;
@@ -46,7 +57,8 @@ Forme *Couche::getForme(int index)
     Forme *ptr;
     ptr = v.getValeur(index);
     if (ptr == nullptr) // Si ptr est null renvoie null
-    {
+    {   
+        cout << "Erreur index invalide : " << endl;
         return nullptr;
     }
     return ptr;
@@ -88,13 +100,18 @@ string Couche::getEtat()
 
 bool Couche::ChangementEtat(char e)
 {
+    if(e == 'I'){
 
-    if (e != 'N' || e != 'A') // Vérifie si c'est un état possible
-    {                         // Seul erreur possible
-        etat = e;
+        cout << "Erreur ne peut pas changer l'état pour l'etat initialise" << endl;
+        return false;
     }
-
-    return false;
+    if (e != 'N' && e != 'A') // Vérifie si c'est un état possible
+    {                         // Seul erreur possible
+        cout << "Erreur changement d'etat : " << endl;
+        return false;
+    }
+    etat = e;
+    return true;
 }
 
 bool Couche::translater(int deltaX, int deltaY) // TODO catch erreurs // DONE
@@ -103,6 +120,7 @@ bool Couche::translater(int deltaX, int deltaY) // TODO catch erreurs // DONE
     {
         if (etat != 'A')
         {
+            cout << "Erreur couche inactive : " << endl;
             return false;
         }
 
@@ -113,7 +131,8 @@ bool Couche::translater(int deltaX, int deltaY) // TODO catch erreurs // DONE
         return true;
     }
     catch (...)
-    { // si erreur retourne faux
+    
+    {   cout << "Erreur couche inactive : " << endl;
         return false;
     }
 }

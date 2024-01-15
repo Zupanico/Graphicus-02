@@ -12,6 +12,8 @@
 
 Canevas::Canevas()
 {
+   couches[0].ChangementEtat('A');
+   coucheActive = 0;
 }
 
 Canevas::~Canevas()
@@ -24,6 +26,7 @@ bool Canevas::reinitialiser()
    {
       couches[i].viderCouche();
    }
+   couches[coucheActive].ChangementEtat('A');
    return true;
 }
 
@@ -31,6 +34,7 @@ bool Canevas::reinitialiserCouche(int index)
 {
    if (index > MAX_COUCHES || index < 0)
    {
+      cout << "Erreur index invalide : " << endl;
       return false;
    }
    couches[index].viderCouche();
@@ -40,8 +44,9 @@ bool Canevas::reinitialiserCouche(int index)
 
 bool Canevas::activerCouche(int index)
 {
-   if (index > MAX_COUCHES || index < 0)
+   if (index >= MAX_COUCHES || index < 0)
    {
+      cout << "Erreur index invalide : " << endl;
       return false;
    }
    desactiverCouche(coucheActive);
@@ -52,8 +57,9 @@ bool Canevas::activerCouche(int index)
 
 bool Canevas::desactiverCouche(int index)
 {
-   if (index > MAX_COUCHES || index < 0)
+   if (index >= MAX_COUCHES || index < 0)
    {
+      cout << "Erreur index invalide : s" << endl;
       return false;
    }
    couches[index].ChangementEtat('N');
@@ -61,9 +67,10 @@ bool Canevas::desactiverCouche(int index)
 }
 
 bool Canevas::ajouterForme(Forme *p_forme)
-{
-   if (couches[coucheActive].ajout(p_forme))
-   {
+{  
+   
+   if (!couches[coucheActive].ajout(p_forme))
+   {  
       return false;
    }
    return true;
@@ -73,6 +80,7 @@ bool Canevas::retirerForme(int index)
 {
    if (couches[coucheActive].retirer(index) == nullptr)
    {
+      cout << "Erreur index invalide : " << endl;
       return false;
    }
    return true;
@@ -90,7 +98,7 @@ double Canevas::aire()
 
 bool Canevas::translater(int deltaX, int deltaY)
 {
-   if (couches[coucheActive].translater(deltaX, deltaY))
+   if (!couches[coucheActive].translater(deltaX, deltaY))
    {
       return false;
    }

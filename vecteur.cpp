@@ -150,6 +150,7 @@ T Vecteur<T>::getValeur(int i)
     }
     catch (...)
     {
+        cout << "Erreur ne peut pas prendre la valeur : ";
         return 0;
     }
 }
@@ -191,7 +192,12 @@ void Vecteur<T>::afficher(ostream &s)
 
 template <typename T>
 void Vecteur<T>::vider()
-{
+{   
+    for (int i = 0; i < taille; i++)
+    {
+        delete tab[i];
+    }
+    
     // supprime le tableau
     delete[] tab;
     // remets les valeurs par defaut
