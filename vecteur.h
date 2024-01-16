@@ -2,7 +2,7 @@
  * Fichier: vecteur.h
  * Auteurs: Nicolas Garant
  * Date: 04 janvier 2024 (creation)
- * Description: Declaration de la classe vector
+ * Description: Declaration de la classe vecteur
  ********/
 
 #ifndef VECTEUR_H
