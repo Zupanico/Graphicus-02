@@ -32,7 +32,7 @@ public:
     // Inserer
     int inserer(T valeur);
     int inserer(T valeur, int index);
-    int doubler();
+    int doublerCapacite();
 
     // Retrait
     T retrait(int i);

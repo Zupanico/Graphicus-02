@@ -26,7 +26,7 @@ int Vecteur<T>::inserer(T valeur)
         // regarde si taille == capacite
         if (taille == capacite)
         {
-            doubler();
+            doublerCapacite();
         }
 
         // insere la valeur
@@ -75,7 +75,7 @@ int Vecteur<T>::inserer(T valeur, int index)
 }
 
 template <typename T>
-int Vecteur<T>::doubler()
+int Vecteur<T>::doublerCapacite()
 {
     try
     {

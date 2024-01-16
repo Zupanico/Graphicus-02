@@ -27,6 +27,7 @@ bool Canevas::reinitialiser()
       couches[i].viderCouche();
    }
    couches[coucheActive].ChangementEtat('A');
+   coucheActive = 0;
    return true;
 }
 
@@ -38,7 +39,8 @@ bool Canevas::reinitialiserCouche(int index)
       return false;
    }
    couches[index].viderCouche();
-   coucheActive = 0;
+   couches[coucheActive].ChangementEtat('A');
+   
    return true;
 }
 
