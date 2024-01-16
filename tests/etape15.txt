@@ -1,0 +1,15 @@
+Etape 15 affichage canevas
+----- Couche 0 -----
+Etat: initialise
+Couche: vide
+----- Couche 1 -----
+Etat: initialise
+Couche: vide
+----- Couche 2 -----
+Etat: initialise
+Couche: vide
+----- Couche 3 -----
+Etat: initialise
+Couche: vide
+----- Couche 4 -----
+Etat: active

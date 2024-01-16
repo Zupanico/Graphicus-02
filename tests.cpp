@@ -127,7 +127,7 @@ void Tests::tests_application_cas_01()
    
    cout << endl << "Etape 9 activer couche 0 : " << c.activerCouche(0) << endl;
 
-   cout << endl << "Retirer forme a l'index 2 : " << c.retirerForme(1) << endl;
+   cout << endl << "Retirer la deuxieme forme : " << c.retirerForme(1) << endl;
 
    cout << endl << "Etape 10 reinitialiser la couche 1 : " << c.reinitialiserCouche(1) << endl;
 

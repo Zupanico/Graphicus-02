@@ -1,0 +1,14 @@
+Etape 19 affichage canevas
+----- Couche 0 -----
+Etat: inactive
+----- Couche 1 -----
+Etat: initialise
+Couche: vide
+----- Couche 2 -----
+Etat: initialise
+Couche: vide
+----- Couche 3 -----
+Etat: active
+Carre (x=10, y=10, c=10, aire=100)
+----- Couche 4 -----
+Etat: active

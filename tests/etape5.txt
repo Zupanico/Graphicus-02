@@ -1,0 +1,4 @@
+Etape 5 activer couche 0 : 1
+Ajout rectangle (l = 1, h = 1) : 1
+Ajout carre (c = 1) : 1
+Ajout cercle (r = 1) : 1

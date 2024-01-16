@@ -1,0 +1,17 @@
+Etape 3 affichage canevas
+----- Couche 0 -----
+Etat: inactive
+----- Couche 1 -----
+Etat: active
+Rectangle (x=0, y=0, l=12, h=3, aire=36)
+----- Couche 2 -----
+Etat: inactive
+Cercle (x=0, y=1, r=5, aire=78.54)
+Carre (x=1, y=2, c=6, aire=36)
+Rectangle (x=2, y=3, l=4, h=9, aire=36)
+----- Couche 3 -----
+Etat: initialise
+Couche: vide
+----- Couche 4 -----
+Etat: initialise
+Couche: vide

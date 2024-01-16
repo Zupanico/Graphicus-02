@@ -1,0 +1,1 @@
+Etape 14 reinitialiser le canvas : 1

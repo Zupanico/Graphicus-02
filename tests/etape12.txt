@@ -1,0 +1,18 @@
+Etape 12 affichage canevas
+----- Couche 0 -----
+Etat: inactive
+Rectangle (x=0, y=0, l=1, h=1, aire=1)
+Cercle (x=0, y=0, r=1, aire=3.1416)
+----- Couche 1 -----
+Etat: initialise
+Couche: vide
+----- Couche 2 -----
+Etat: inactive
+Cercle (x=2, y=2, r=5, aire=78.54)
+Carre (x=3, y=3, c=6, aire=36)
+Rectangle (x=4, y=4, l=4, h=9, aire=36)
+----- Couche 3 -----
+Etat: initialise
+Couche: vide
+----- Couche 4 -----
+Etat: active
